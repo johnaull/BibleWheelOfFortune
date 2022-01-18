@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.gicthus.bibleWheelOfFortune.MainActivity">
+
+    <com.gicthus.spinningwheel.SpinningWheelView
+        android:id="@+id/wheel"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_weight="1"
+        app:wheel_arrow_width="20dp"
+        app:wheel_arrow_height="35dp"
+        app:wheel_arrow_color="@android:color/black"
+        app:wheel_colors="@array/rainbow_dash"
+        app:wheel_items="@array/dummy"
+        app:wheel_stroke_color="@android:color/black"
+        app:wheel_stroke_width="5dp"/>
+
+    <TextView
+        android:id="@+id/pickName"
+        android:layout_width="400dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_below="@id/wheel"
+        android:text="Enter a new player name?"
+        android:textSize="8pt" />
+
+
+    <RadioGroup
+        android:id="@+id/radioYesNo1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_below="@id/pickName"
+        android:layout_marginRight="16dp">
+
+        <RadioButton
+            android:id="@+id/radioYes1"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:checked="true"
+            android:text="Yes, I will enter a new name." />
+
+        <RadioButton
+            android:id="@+id/radioNo1"
+            android:checked="true"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="No, I will pick a name from those who have played before" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnGetYesNo1"
+        android:layout_below="@id/radioYesNo1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="getYesNo1"
+        android:text="Continue" />
+
+
+    <RadioGroup
+        android:id="@+id/radioYesNo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_below="@id/pickName"
+        android:layout_marginRight="16dp">
+
+        <RadioButton
+            android:id="@+id/radioYes2"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:checked="true"
+            android:text="Yes, I will enter a new name." />
+
+        <RadioButton
+            android:id="@+id/radioNo2"
+            android:checked="true"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="No, I will pick a name from those who have played before" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnGetYesNo2"
+        android:layout_below="@id/radioYesNo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="getYesNo2"
+        android:text="Continue" />
+
+    <TextView
+        android:id="@+id/spinnerPrompt"
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_below="@id/btnGetYesNo2"
+        android:text="Choose a name:"
+        android:textSize="8pt" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spinnerPrompt"
+        android:layout_marginTop="16dp"
+        />
+
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:layout_below="@id/spinner2"
+        />
+
+
+    <TextView
+        android:id="@+id/player1"
+        android:layout_width="180dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_below="@id/wheel"
+        android:textSize="8pt" />
+
+    <TextView
+        android:id="@+id/player2"
+        android:layout_width="180dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_below="@id/wheel"
+        android:layout_toRightOf="@id/player1"
+        android:textSize="8pt" />
+
+    <TextView
+        android:id="@+id/curPlayer1"
+        android:layout_width="180dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_below="@id/player1"
+        android:text="  "
+        android:textSize="24pt" />
+    <TextView
+        android:id="@+id/curPlayer2"
+        android:layout_width="180dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_below="@id/player2"
+        android:layout_toRightOf="@id/curPlayer1"
+        android:text="  "
+        android:textSize="24pt" />
+
+    <TextView
+        android:id="@+id/curScore1"
+        android:layout_width="180dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_below="@id/curPlayer1"
+        android:text="curScore1"
+        android:textSize="8pt" />
+
+    <TextView
+        android:id="@+id/curScore2"
+        android:layout_width="180dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_below="@id/curPlayer2"
+        android:layout_toRightOf="@id/curPlayer1"
+        android:text="curScore1"
+        android:textSize="8pt" />
+
+    <TextView
+        android:id="@+id/totScore1"
+        android:layout_width="180dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_below="@id/curScore1"
+        android:text="totScore1"
+        android:textSize="8pt" />
+
+    <TextView
+        android:id="@+id/totScore2"
+        android:layout_width="180dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_below="@id/curScore1"
+        android:layout_toRightOf="@id/player1"
+        android:text="totScore1"
+        android:textSize="8pt" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="400dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_below="@id/totScore1"
+        android:text=""
+        android:textSize="12pt" />
+
+    <TextView
+        android:id="@+id/puzzleType"
+        android:layout_width="400dp"
+        android:layout_height="105dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_below="@id/textView"
+        android:text=""
+        android:textSize="8pt" />
+
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="400dp"
+        android:layout_height="105dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_below="@id/btnGetYesNo1"
+        android:text=""
+        android:textSize="8pt" />
+
+
+    <Button
+        android:id="@+id/show"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/puzzleType"
+        android:layout_centerHorizontal="false"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="16dp"
+        android:gravity="center_horizontal"
+        android:onClick="showWheel"
+        android:text="SPIN"
+        android:textAllCaps="false"
+        android:textSize="5pt" />
+
+    <Button
+        android:id="@+id/spinNoWheel"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/puzzleType"
+        android:layout_centerHorizontal="false"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="16dp"
+        android:gravity="center_horizontal"
+        android:layout_toRightOf="@+id/show"
+        android:onClick="spinNoWheel"
+        android:text="SPIN - HIDE WHEEL"
+        android:textAllCaps="false"
+        android:textSize="5pt" />
+    <Button
+        android:id="@+id/solve"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/puzzleType"
+        android:layout_centerHorizontal="false"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="16dp"
+        android:layout_toRightOf="@+id/spinNoWheel"
+        android:gravity="center_horizontal"
+        android:onClick="solve"
+        android:text="SOLVE"
+        android:textAllCaps="false"
+        android:textSize="5pt" />
+
+    <Button
+        android:id="@+id/hide"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/puzzleType"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="16dp"
+        android:layout_toRightOf="@+id/show"
+        android:gravity="center_horizontal"
+        android:onClick="systemExit"
+        android:text="EXIT"
+        android:textAllCaps="false"
+        android:textSize="5pt" />
+
+    <Button
+        android:id="@+id/nextPuzzle"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/puzzleType"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="16dp"
+        android:layout_toRightOf="@+id/hide"
+        android:gravity="center_horizontal"
+        android:onClick="nextPuzzle"
+        android:text="NEXT PUZZLE"
+        android:textAllCaps="false"
+        android:textSize="5pt" />
+
+    <TextView
+        android:id="@+id/wheelVal"
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_below="@id/show"
+        android:text="wheelVal"
+        android:textSize="8pt" />
+
+    <TextView
+        android:id="@+id/pickLetterTV"
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_below="@id/wheelVal"
+        android:text=""
+        android:textSize="8pt" />
+
+    <Button
+        android:id="@+id/pickLetter"
+        android:layout_width="100dp"
+        android:layout_height="10dp"
+        android:layout_marginLeft="234dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="16dp"
+        android:layout_below="@id/wheelVal"
+        android:gravity="center_horizontal"
+        android:onClick="pickLetter"
+        android:text="PICK LETTER"
+        android:textAllCaps="false"
+        android:textSize="5pt" />
+
+
+    <EditText
+        android:id="@+id/editText_main"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@id/pickLetter"
+        android:layout_below="@id/pickLetter"
+        android:layout_marginTop="16dp"
+        android:hint="Pick a letter"
+        android:singleLine="true"
+        android:inputType="text|textNoSuggestions"/>
+
+
+
+</RelativeLayout>

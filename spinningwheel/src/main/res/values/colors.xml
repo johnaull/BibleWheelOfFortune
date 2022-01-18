@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="rainbowDashRed">#EE4035</color>
+    <color name="rainbowGray">#a9bbc7</color>
+    <color name="rainbowDashPeach">#F37736</color>
+    <color name="rainbowDarkGray">#6a6e6b</color>
+    <color name="rainbowDashLightBlue">#72c3cc</color>
+    <color name="rainbowDashYellow">#FDF498</color>
+    <color name="rainbowDashGreen">#7BC043</color>
+    <color name="rainbowDashBlue">#0392CF</color>
+    <color name="rainbowLavender">#ed9fec</color>
+    <color name="rainbowPurple">#5941c4</color>
+
+    <string-array name="rainbow_dash">
+        <item>@color/rainbowDashRed</item>
+        <item>@color/rainbowDashRed</item>
+        <item>@color/rainbowGray</item>
+        <item>@color/rainbowGray</item>
+        <item>@color/rainbowDashPeach</item>
+        <item>@color/rainbowDashPeach</item>
+        <item>@color/rainbowDarkGray</item>
+        <item>@color/rainbowDashLightBlue</item>
+        <item>@color/rainbowDashLightBlue</item>
+        <item>@color/rainbowDashYellow</item>
+        <item>@color/rainbowDashYellow</item>
+        <item>@color/rainbowDashGreen</item>
+        <item>@color/rainbowDashGreen</item>
+        <item>@color/rainbowDashBlue</item>
+        <item>@color/rainbowDashBlue</item>
+        <item>@color/rainbowLavender</item>
+        <item>@color/rainbowLavender</item>
+        <item>@color/rainbowPurple</item>
+    </string-array>
+</resources>

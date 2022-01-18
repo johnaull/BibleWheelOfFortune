@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Spinning Wheel</string>
+
+    <string-array name="dummy">
+        <item>600</item>
+        <item>600.</item>
+        <item>200</item>
+        <item>200.</item>
+        <item>700</item>
+        <item>700.</item>
+        <item>BANKRUPT</item>
+        <item>100</item>
+        <item>100.</item>
+        <item>500</item>
+        <item>500.</item>
+        <item>800</item>
+        <item>800.</item>
+        <item>400</item>
+        <item>400.</item>
+        <item>1000</item>
+        <item>1000.</item>
+        <item>LOSE TURN</item>
+    </string-array>
+</resources>
